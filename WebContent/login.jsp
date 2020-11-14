@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="pass">Password</label>
-                                <input type="text" id="pass" name="pass" placeholder="Password" class="form-control">
+                                <input type="password" id="pass" name="pass" placeholder="Password" class="form-control">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Login</button>
                         </form>
