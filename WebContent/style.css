@@ -14,11 +14,15 @@ body {
 .nav-item .nav-link{
     text-transform: uppercase;
     color: white !important;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Poppins',sans-serif !important;
 }
 
 .nav-item a:hover{
     color: rgba(177, 177, 177, 0.9) !important;
+}
+
+.navbar-brand{
+	font-family: 'Roboto Condensed',sans-serif !important;
 }
 
 .cover-img{

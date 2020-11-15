@@ -4,6 +4,7 @@ import java.io.IOException;
 import model.Login;
 import dao.Dao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,7 +42,11 @@ public class LoginController extends HttpServlet {
 			response.sendRedirect("dashboard.jsp");
 		}
 		else {
-			response.getWriter().println("<h1>" + "Invalid username or password" + "</h1>");
+			RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
+			String str="Invalid Username or password";
+			request.setAttribute("msg", str);
+			rd.forward(request, response);
+			//response.getWriter().println("<h1>" + "Invalid username or password" + "</h1>");
 		}
 		
 	}
