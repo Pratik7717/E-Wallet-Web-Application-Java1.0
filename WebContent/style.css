@@ -25,6 +25,24 @@ body {
 	font-family: 'Roboto Condensed',sans-serif !important;
 }
 
+.security-section{
+    background: #fce8e5;
+}
+
+.section-title{
+    text-transform: uppercase !important;
+    text-align: left;
+}
+
+.rowmid{
+	height: 80vh;
+}
+
+.welcome-section{
+	font-family: 'Roboto Condensed',sans-serif !important;
+	text-transform: uppercase !important;
+}
+
 .cover-img{
     height: 100vh;
     background-image: url(./images/pexels-anna-shvets-4482900.jpg);

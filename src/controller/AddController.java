@@ -1,10 +1,8 @@
 package controller;
 
 import java.io.IOException;
-
-import model.Login;
-import model.Register;
-import dao.Dao;
+//import java.util.Enumeration;
+import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,17 +12,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.Dao;
+import model.Register;
+
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class AddController
  */
-@WebServlet("/LoginController")
-public class LoginController extends HttpServlet {
+@WebServlet("/AddController")
+public class AddController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginController() {
+    public AddController() {
         super();
     }
 
@@ -33,26 +34,36 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String uname=request.getParameter("uname");
-		String pass=request.getParameter("pass");
+		HttpSession session=request.getSession(false);
+		int i=0;
+		Enumeration<String> attributes = request.getSession().getAttributeNames();
+		while (attributes.hasMoreElements()) {
+		    String attribute = (String) attributes.nextElement();
+		    System.out.println(attribute+" : "+request.getSession().getAttribute(attribute));
+		}
 		
-		Login in=new Login(uname,pass);
-		
-		Dao data=new Dao();
-		Register user=data.validate(in);
-		if(user!=null) {
-			HttpSession session=request.getSession();
+		Register user=(Register)session.getAttribute("user");
+		String password=request.getParameter("pass");
+		System.out.println(user.getPass());
+		if(session!=null) {
+			Double amt=Double.parseDouble(request.getParameter("amount"));
+			Dao data=new Dao();
+			i=data.updateBalance(user, amt);
+			user.setBalance(user.getBalance()+amt);
 			session.setAttribute("user", user);
 			session.setAttribute("balance", user.getBalance());
-			RequestDispatcher rd=request.getRequestDispatcher("dashboard.jsp");
+		}
+		
+		RequestDispatcher rd=request.getRequestDispatcher("dashboard.jsp");
+		if(i>0) {
+			String msg="Balance Updated Successfully";
+			request.setAttribute("msg", msg);
 			rd.forward(request, response);
 		}
 		else {
-			RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
-			String str="Invalid Username or password";
-			request.setAttribute("msg", str);
+			String msg="Failed to update balance";
+			request.setAttribute("msg", msg);
 			rd.forward(request, response);
-			//response.getWriter().println("<h1>" + "Invalid username or password" + "</h1>");
 		}
 		
 	}

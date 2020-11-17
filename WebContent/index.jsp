@@ -22,7 +22,7 @@
   <body>
       
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">QUICKICHARGE</a>
+        <a class="navbar-brand" href="#">LinkCode</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -79,9 +79,59 @@
         </a>
       </div>
 
+	  
+      <div style="height: 5vh;"></div>
 
+      <div class="container-fluid security-section">
 
-      <div style="height: 10vh;"></div>
+        <div class="container">
+          <br>
+          <br>
+          <br>
+          <div class="section-title"><h2><strong>We Take Your Security</strong></h2></div>
+          <p style="font-size: 1.7rem ;font-weight: 300; text-transform: uppercase;">Seriously!!</p>
+  
+          <div class="row">
+  
+            <div class="col-md-3">
+              <p class="" style="font-weight: 400; font-size: 1.2rem;">Peace of mind for you as we have the most secure technology for your data.</p>
+            </div>
+  
+            <div class="col-md-3">
+              <img src="./images/two_factor_icon.png" alt="two_factor_icon" style="width: 80;" class="mx-auto">
+              <p class="lead">Simple One Click Recharge Payments.</p>
+            </div>
+  
+            <div class="col-md-3">
+              <img src="./images/encryption.png" alt="encryption" style="width: 80;" class="mx-auto">
+              <p class="lead">Your Data is safe with us.Feel free to share your details.</p>
+            </div>
+  
+            <div class="col-md-3">
+              <img src="./images/secure_contact.png" alt="secure_contact" style="width: 80;" class="mx-auto">
+              <p class="lead">An interactive UI and highly functional features.</p>
+            </div>
+  
+  
+          </div>
+
+        </div>  
+
+      </div>
+
+      <div style="height: 5vh;"></div>
+
+      <footer class="container-fluid" style="height: 8vh; background: #343a40;">
+        <div style="height: 3vh;"></div>
+        <div class="container lead" style="color: white; font-family: 'Poppins',sans-serif">
+          &copy;2020 Linkcode Technologies.
+        </div>
+
+      </footer>
+	 
+	  
+	
+	
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

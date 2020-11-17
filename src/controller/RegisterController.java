@@ -36,7 +36,7 @@ public class RegisterController extends HttpServlet {
 		String uname=request.getParameter("uname");
 		String pass=request.getParameter("pass");
 		
-		Register rg=new Register(fname,lname,mob,uname,pass);
+		Register rg=new Register(fname,lname,mob,uname,pass,1000.00);
 		
 		Dao data=new Dao();
 		int i=data.save(rg);
