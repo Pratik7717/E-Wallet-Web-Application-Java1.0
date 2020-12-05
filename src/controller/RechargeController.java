@@ -47,9 +47,12 @@ public class RechargeController extends HttpServlet {
 			
 			Dao data=new Dao();
 			i=data.recharge(user, rg);
-			user.setBalance(user.getBalance()-amt);
-			session.setAttribute("user", user);
-			session.setAttribute("balance", user.getBalance());
+			if(i>0) {
+				user.setBalance(user.getBalance()-amt);
+				session.setAttribute("user", user);
+				session.setAttribute("balance", user.getBalance());
+			}
+			
 		}
 		
 		RequestDispatcher rd=request.getRequestDispatcher("dashboard.jsp");

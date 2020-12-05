@@ -65,3 +65,13 @@ body {
     font-style: 'Poppins' , sans-serif;
 }
 
+@media(max-width:768px){
+	.rowmid{
+		height: 200vh;
+	}
+	
+}
+
+
+
+

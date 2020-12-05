@@ -65,7 +65,7 @@
       
       <div class="container">
 
-        <div class="row rowmid align-items-center justify-content-center">
+        <div class="row rowmid align-items-center justify-content-center" style="overflow:hidden;">
             <div class="col-md-4">
                 <div class="card border-dark mb-3" style="max-width: 18rem; height: 65vh;">
                     <div class="card-header">E-Wallet Balance Update</div>

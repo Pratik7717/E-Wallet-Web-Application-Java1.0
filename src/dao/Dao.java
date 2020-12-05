@@ -86,6 +86,8 @@ public class Dao {
 	public int recharge(Register user,Recharge rg) {
 		
 		Connection con=Myconnection.getConnection();
+		if(user.getBalance()<rg.getAmount())
+			return 0;
 		double updatedamt=user.getBalance()-rg.getAmount();
 		try {
 			PreparedStatement stuser=con.prepareStatement("Update userinfo set balance=? where uname=?");
